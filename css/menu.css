@@ -1,0 +1,52 @@
+#dropdown-buttom {
+    margin: 15px 0 5px 45px;
+}
+#add-item-btn {
+    margin: 15px 0 5px 10px;
+    
+}
+
+#editMenuButton {
+    vertical-align: right;
+}
+
+#modal-title {
+    text-align: center;
+}
+
+#modal-body {
+    background-color:white;
+}
+
+#modal-footer {
+    background-color:white;
+}
+
+.modal-content-custom {
+    width: 100% !important;
+}
+
+.remove-button{
+    color: #EB938F;
+    font-size: 16px;
+}
+#text-size-warning{
+    font-size: larger;
+}
+
+#menu-info thead th:nth-child(1) {
+    width: 5%;
+}
+#menu-info thead th:nth-child(2) {
+    width: 20%;
+}
+#menu-info thead th:nth-child(3) {
+    width: 57%;
+}
+#menu-info thead th:nth-child(4) {
+    width: 8%;
+}
+#menu-info thead th:nth-child(5) {
+    width: 10%;
+}
+

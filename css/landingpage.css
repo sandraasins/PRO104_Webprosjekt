@@ -1,0 +1,26 @@
+.modal-content-offset{
+    top: 20px;
+}
+.write-broadcast-area {
+    padding: 20px;
+    background-color: #ccc;
+}
+#broadcast-send-button {
+    padding: 0;
+}
+#broadcast-input {
+    width: 83.3%;
+}
+#broadcast-send-button {
+    width: 15%;
+}
+#broadcast-send-button, #broadcast-input {
+    display: inline-block;
+}
+
+.broadcast-box{
+    background-color: #77B4EA;
+}
+.media-content{
+    color: black !important;
+}

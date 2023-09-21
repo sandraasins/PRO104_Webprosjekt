@@ -1,0 +1,20 @@
+.modal-content-custom {
+    width: 100%;
+}
+
+.show-employee{
+    color: #4FADFF;
+}
+
+#dropdown-button {
+    margin: 15px 0 5px 45px;
+}
+
+#add-button {
+    margin: 15px 0 5px 10px;
+    
+}
+
+#text-size-warning{
+    font-size: larger;
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Ansatte</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+		/>
+    <link rel="stylesheet" href="css/employeepage.css" />
+    <link rel="stylesheet" href="css/general.css" />
+
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+		<script type="module" src="scripts/employeeData.js"></script>
+		<script defer src="scripts/dropdown.js"></script>
+    <script type="module" src="scripts/globalNavBar.js"></script>
+	</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar mt-5" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="landingpage.html">
+          <img id="pizza-logo" src="./images/Logo.svg"/>  
+        </a>
+				<a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+			<div id="navbar-menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item has-text-weight-semibold" href="landingpage.html">Salgsdata</a>
+					<a class="navbar-item has-text-weight-semibold active" href="employeepage.html">Ansatte</a>
+					<a class="navbar-item has-text-weight-semibold" href="menu.html">Endre meny</a>
+				</div>
+
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<span class="loged-in mr-4 has-text-weight-semibold">Logget inn som: Admin</span>
+							<a class="button btn-styling" href="login.html">
+								<p class="has-text-weight-bold">Logg ut</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+    <!--NAVBAR FINISH--> 
+
+    <!-- DROPDOWN MENU-->
+    <div class="column is-6">
+      <div class="dropdown is-hoverable">
+        <div class="dropdown-trigger">
+          <button class="button btn-styling" id="dropdown-button" aria-haspopup="true">
+            <span id="dropdown-label">Alle filialer</span>
+            <span class="icon is-small">
+              <i class="fas fa-angle-down" aria-hidden="true"></i>
+            </span>
+          </button>
+        </div>
+       <div class="dropdown-menu" role="menu">
+          <div class="dropdown-content">
+            <div class="dropdown-item">
+              <button class="button is-fullwidth dropdown-button btn-styling">
+                <span>Alle filialer</span>
+              </button>
+            </div>
+            <hr class="dropdown-divider" />
+            <div class="dropdown-item">
+              <button class="button is-fullwidth dropdown-button btn-styling">
+                <span>Frogner</span>
+              </button>
+            </div>
+            <div class="dropdown-item">
+              <button class="button is-fullwidth dropdown-button btn-styling">
+                <span>Nydalen</span>
+              </button>
+            </div>
+            <div class="dropdown-item">
+              <button class="button is-fullwidth dropdown-button btn-styling">
+                <span>Tøyen</span>
+              </button>
+            </div>
+            <div class="dropdown-item">
+              <button class="button is-fullwidth dropdown-button btn-styling">
+                <span>Grünerløkka</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="button btn-styling" id="add-button">Legg til ansatt</button>
+    </div>
+  <!--DROPDOWN MENU FINISH-->
+
+  <!--CONTENT-->
+    <div class="container">      
+        <main class="columns">
+
+            <section class="column is-6">
+              <div id="employee-list-div">
+              </div>
+            </section>
+    
+            <section class="column is-6">
+                <div id="employee-info-div">
+                </div>
+            </section>
+        </main>
+
+    </div>
+
+    <!--Ida: Modal Add Employee-->
+    <div id="addEmployeeModal">
+      <div id="modalAdd" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Legg til ansatt</p>
+            <button id="add-x" class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+          <!-- Content -->
+          <div class="modal-content modal-content-custom">
+            <form>
+              <div class="modal-body">
+                <div class="form-group">
+                  <label for="name">Navn</label><br>
+                  <input type="text" id="new-name" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Adresse</label><br>
+                  <input type="text" id="new-address" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Postkode</label><br>
+                  <input type="text" id="new-zipCode" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Telefon</label><br>
+                  <input type="text" id="new-phone" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Fødselsdato</label><br>
+                  <input type="text" id="new-birth" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Stilling</label><br>
+                  <input type="text" id="new-position" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Avdeling</label><br>
+                  <div class="select">
+                    <select id="select-department">
+                      <option value="none" selected="true" disabled>Select</option>
+                      <option value="frogner">Frogner</option>
+                      <option value="nydalen">Nydalen</option>
+                      <option value="toyen">Tøyen</option>
+                      <option value="grunerlokka">Grünerløkka</option>
+                    </select>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="name">Ansattnummer</label><br>
+                  <input type="text" id="new-employeeNumber" class="input form-control" required>
+                </div>
+              </div>
+            </form>
+          </div>
+        <!-- Content end -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button btn-styling" id="save-button">Lagre endringer</button>
+            <button class="button delete-btn-styling" id="cancel-button">Avbryt</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ida: Modal Delete Employee -->
+    <div>
+      <div class="modal" id="modalDelete">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Slett ansatt</p>
+            <button id="delete-x" class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+          <!-- Content -->
+          <div class="modal-content modal-content-custom">
+            <form>
+              <div class="modal-body">
+                <p id="text-size-warning">Er du sikker på at du vil slette all data for denne ansatte?</p>
+                <p class="text-warning">Denne handlingen kan ikke endres.</p>
+              </div>
+            </form>
+          </div>
+        <!-- Content end -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button delete-btn-styling" id="delete-button">Slett ansatt</button>
+            <button class="button btn-styling" id="cancel-delete-button">Avbryt</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+
+     <!-- Ida: Modal Edit Employee-->
+     <div id="editEmployeeModal">
+      <div id="modalEdit" class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-card">
+          <header class="modal-card-head">
+            <p class="modal-card-title">Rediger Ansatt</p>
+            <button id="edit-x" class="delete" aria-label="close"></button>
+          </header>
+          <section class="modal-card-body">
+          <!-- Content -->
+          <div class="modal-content modal-content-custom">
+            <form>
+              <div class="modal-body">
+                <div id="employee-number-div"></div>
+                <div class="form-group">
+                  <label for="name">Navn</label><br>
+                  <input type="text" id="edit-name" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Adresse</label><br>
+                  <input type="text" id="edit-address" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Postkode</label><br>
+                  <input type="text" id="edit-zipCode" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Telefon</label><br>
+                  <input type="text" id="edit-phone" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Fødselsdato</label><br>
+                  <input type="text" id="edit-birth" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Stilling</label><br>
+                  <input type="text" id="edit-position" class="input form-control" required>
+                </div>
+                <div class="form-group">
+                  <label for="name">Avdeling</label><br>
+                  <div class="select">
+                    <select id="edit-select-department">
+                      <option value="frogner">Frogner</option>
+                      <option value="nydalen">Nydalen</option>
+                      <option value="toyen">Tøyen</option>
+                      <option value="grunerlokka">Grünerløkka</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        <!-- Content end -->
+          </section>
+          <footer class="modal-card-foot">
+            <button class="button btn-styling" id="update-button">Oppdater</button>
+            <button class="button delete-btn-styling" id="cancel-edit-button">Avbryt</button>
+          </footer>
+        </div>
+      </div>
+    </div>
+    
+</body>
+</html>

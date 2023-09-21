@@ -1,0 +1,12 @@
+#container {
+    height: 100vh;
+}
+#container-2 {
+    height: 40vh;
+    margin: auto;
+    position: relative;
+    top: 20%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}

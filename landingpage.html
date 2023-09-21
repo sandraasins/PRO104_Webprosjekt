@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="no">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Salgsdata</title>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+		<link rel="stylesheet" href="css/landingpage.css" />
+		<link rel="stylesheet" href="css/general.css" />
+		<script src="https://cdn.jsdelivr.net/npm/chart.js@3.2.1/dist/chart.min.js"></script>
+		<script type="module" src="scripts/revenueData.js"></script>
+		<script defer src="scripts/dropdown.js"></script>
+		<script type="module" src="scripts/broadcast.js"></script>
+		<script type="module" src="scripts/globalNavBar.js"></script>
+	</head>
+	<body>
+		<!-- NAVBAR-->
+		<nav class="navbar mt-5" role="navigation" aria-label="main navigation">
+			<div class="navbar-brand">
+				<a class="navbar-item" href="landingpage.html">
+					<img id="pizza-logo" src="./images/Logo.svg"/>  
+				</a>
+				<a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+					<span aria-hidden="true"></span>
+				</a>
+			</div>
+			<div id="navbar-menu" class="navbar-menu">
+				<div class="navbar-start">
+					<a class="navbar-item has-text-weight-semibold active" href="landingpage.html">Salgsdata</a>
+					<a class="navbar-item has-text-weight-semibold" href="employeepage.html">Ansatte</a>
+					<a class="navbar-item has-text-weight-semibold" href="menu.html">Endre meny</a>
+				</div>
+				<div class="navbar-end">
+					<div class="navbar-item">
+						<div class="buttons">
+							<span class="loged-in mr-4 has-text-weight-semibold">Logget inn som: Admin</span>
+							<a class="button btn-styling" href="login.html">
+								<p class="has-text-weight-bold">Logg ut</p>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- CONTENT-->
+		<div class="columns is-multiline">	
+			<div class="column is-5">
+				<!-- broadcast -->
+				<h1 class="is-size-2 has-text-centered">Broadcasts</h1>
+				<div id="broadcast-container" class="column is-8 is-offset-2"></div>
+				<div class="column columns is-8 is-offset-2 level">
+					<div class="level-left is-inline-block">
+						<button id="read-all" class="button level-item btn-styling">Les alle</button>
+					</div>
+					<div class="level-right is-inline-block">
+						<button id="new-broadcast" class="button  level-item btn-styling">Ny broadcast</button>
+					</div>
+				</div>
+			</div>
+			<div class="column is-7">
+				<h1 class="is-size-2 is-6 has-text-centered" id="graph-header">Total omsetning: Alle filialer </h1>
+				<div class="columns is-multiline">
+					<div class="column is-11">
+						<canvas id="revenue-chart"></canvas>
+					</div>
+					<div class="column is-11">
+						<h1 class="is-size-2 has-text-centered is-11" id="top-5-header">Top 5 pizzaer sist måned: Alle filialer</h1>
+						</div>
+						<div class="column is-2">
+							<div class="dropdown is-hoverable">
+								<div class="dropdown-trigger">
+									<button class="button btn-styling" aria-haspopup="true">
+										<span id="dropdown-label">Alle filialer</span>
+										<span class="icon is-small">
+											<i class="fas fa-angle-down" aria-hidden="true"></i>
+										</span>
+									</button>
+								</div>
+								<div class="dropdown-menu" role="menu">
+									<div class="dropdown-content">
+										<div class="dropdown-item">
+											<button class="button is-fullwidth dropdown-button btn-styling">
+												<span>Alle filialer</span>
+											</button>
+										</div>
+										<hr class="dropdown-divider" />
+										<div class="dropdown-item">
+											<button class="button is-fullwidth dropdown-button btn-styling">
+												<span>Frogner</span>
+											</button>
+										</div>
+										<div class="dropdown-item">
+											<button class="button is-fullwidth dropdown-button btn-styling">
+												<span>Nydalen</span>
+											</button>
+										</div>
+										<div class="dropdown-item">
+											<button class="button is-fullwidth dropdown-button btn-styling">
+												<span>Tøyen</span>
+											</button>
+										</div>
+										<div class="dropdown-item">
+											<button class="button is-fullwidth dropdown-button btn-styling">
+												<span>Grünerløkka</span>
+											</button>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					<div class="column is-9">
+						<table class="table is-striped is-fullwidth">
+							<thead>
+								<tr>
+									<th>#</th>
+									<th>Nr.</th>
+									<th>Navn</th>
+									<th>Antall medium</th>
+									<th>Antall store</th>
+									<th>Sum</th>
+								</tr>
+							</thead>
+							<tbody id="stat-table"></tbody>
+						</table>
+					</div>
+					
+					
+					<div class="column is-11">
+						<canvas id="revenue-chart" ></canvas>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="modal-area"></div>
+	</body>
+</html>

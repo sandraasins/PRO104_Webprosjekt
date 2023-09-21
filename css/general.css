@@ -1,0 +1,25 @@
+#pizza-logo {
+    width: 142px;
+    height: 58px;
+    max-height: 58px;
+}
+.navbar-start .active{
+    color: #3091E6;
+    font-size: 20px;
+}
+
+a.navbar-item:hover{
+    color: black !important;
+}
+.broadcast-box{
+    background-color: #9CD1FF;
+    color:black;
+}
+.btn-styling{
+    background-color: #4FADFF;
+    color:black;
+}
+.delete-btn-styling{
+    background-color: #EB938F;
+    color:black;
+}

@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Landingsside</title>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" />
+        <link rel="stylesheet" href="./css/login.css" />
+        <link rel="stylesheet" href="css/general.css" />
+        <script type="module" src="scripts/login.js"></script>
+    </head>
+    <body>
+        <div id="container" class="container">
+            <div id="container-2" class="columns">
+                <div class="column is-4 is-offset-4 has-text-centered">
+                    <!-- Martin: title -->
+                    <h1 class="has-text-centered is-size-1 has-text-weight-bold">Login</h1>
+                    <br>
+                    <!-- Martin: username input -->
+                    <div class="control has-icons-left">
+                        <input id="login-uid" class="input" type="text" placeholder="Username">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-user"></i>
+                        </span>
+                    </div>
+                    <br>
+                    <!-- Martin: password input -->
+                    <div class="control has-icons-left">
+                        <input id="login-pwd" class="input" type="password" placeholder="Password">
+                        <span class="icon is-small is-left">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                    </div>
+                    <br>
+                    <!-- Martin: login button -->
+                    <button id="login-btn" class="button btn-styling">Login</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

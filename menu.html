@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meny</title>
+    <link rel="stylesheet" href="./css/menu.css" class="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="css/general.css" />
+    <script type="module" src="scripts/menu.js"></script>
+    <script type="module" src="scripts/globalNavBar.js"></script>
+</head>
+
+<body>
+    <!--NAVBAR-->
+    <nav class="navbar mt-5" role="navigation" aria-label="main navigation">
+      <div class="navbar-brand">
+        <a class="navbar-item" href="landingpage.html" >
+          <img id="pizza-logo" src="./images/Logo.svg"/>  
+        </a>
+        
+        <a id="navbar-burger" role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </a>
+      </div>
+      <div id="navbar-menu" class="navbar-menu">
+        <div class="navbar-start">
+          <a class="navbar-item has-text-weight-semibold" href="landingpage.html">Salgsdata</a>
+					<a class="navbar-item has-text-weight-semibold" href="employeepage.html">Ansatte</a>
+					<a class="navbar-item has-text-weight-semibold active" href="menu.html">Endre meny</a>
+        </div>
+
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="buttons">
+              <span class="loged-in mr-4 has-text-weight-semibold">Logget inn som: Admin</span>
+                <a class="button btn-styling" href="login.html">
+                  <p class="has-text-weight-bold">Logg ut</p>
+                </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!--NAVBAR FINISH-->
+
+        <!-- DROPDOWN MENU-->
+			<div class="column is-6" id="dropdown-menu">
+				<div class="dropdown is-hoverable">
+					<div class="dropdown-trigger">
+						<button class="button btn-styling"  id="dropdown-buttom" aria-haspopup="true">
+							<span id="dropdown-label">Meny</span>
+							<span class="icon is-small">
+								<i class="fas fa-angle-down" aria-hidden="true"></i>
+							</span>
+						</button>
+					</div>
+					<div class="dropdown-menu" role="menu">
+						<div class="dropdown-content">
+							<div class="dropdown-item">
+								<button class="button is-fullwidth dropdown-button btn-styling">
+                  <span>Meny</span>
+								</button>
+							</div>
+							<hr class="dropdown-divider" />
+							<div class="dropdown-item">
+								<button class="button is-fullwidth dropdown-button btn-styling">
+									<span>Pizzameny</span>
+								</button>
+							</div>
+							<div class="dropdown-item">
+								<button class="button is-fullwidth dropdown-button btn-styling">
+									<span>Siderettmeny</span>
+								</button>
+							</div>
+							<div class="dropdown-item">
+								<button class="button is-fullwidth dropdown-button btn-styling">
+									<span>Drikkemeny</span>
+								</button>
+							</div>
+							<div class="dropdown-item">
+								<button class="button is-fullwidth dropdown-button btn-styling">
+									<span>Dessertmeny</span>
+								</button>
+							</div>
+						</div>
+					</div>
+        </div>
+        <button class="button btn-styling" id="add-item-btn">Legg til på meny</button>
+      </div>
+    <!--DROPDOWN END-->
+
+
+    <!-- SECTIONS -->
+    <div class="container">
+      <main class="columns is is-multiline">
+          <section class="column is-10 is-offset-1">
+            <div id="menu-info"></div>
+          </section>
+      </main>
+    </div>
+  
+
+  <div id="modal-area"></div>
+</body>
+</html>
